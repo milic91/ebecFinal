@@ -34,8 +34,10 @@ angular.module('app.controllers', [])
 	});
 })
    
-.controller('scheduleCtrl', function($scope) {
-
+.controller('scheduleCtrl', function($scope, $ionicSideMenuDelegate) {
+	$scope.toggleLeft = function() {
+		$ionicSideMenuDelegate.toogleLeft();
+	};
 })
    
 .controller('contactOrganizersCtrl', function($scope) {
@@ -43,7 +45,9 @@ angular.module('app.controllers', [])
 })
    
 .controller('rulesCtrl', function($scope) {
-
+	$scope.download = function(url) {
+		window.location = url;
+	};
 })
    
 .controller('aboutCtrl', function($scope) {
